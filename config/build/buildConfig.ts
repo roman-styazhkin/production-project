@@ -1,9 +1,10 @@
-import webpack from "webpack";
-import { buildPlugins } from "./buildPlugins";
-import { buildLoaders } from "./buildLoaders";
-import { buildResolve } from "./buildResolve";
-import { BuildOptions } from "./types/config";
-import { buildDevServer } from "./buildDevServer";
+import webpack from 'webpack';
+import { buildPlugins } from './buildPlugins';
+import { buildLoaders } from './buildLoaders';
+import { buildResolve } from './buildResolve';
+import { BuildOptions } from './types/config';
+import { buildDevServer } from './buildDevServer';
+
 export function buildConfig(options: BuildOptions): webpack.Configuration {
   const { mode, paths, isDev } = options;
 
@@ -22,5 +23,5 @@ export function buildConfig(options: BuildOptions): webpack.Configuration {
     resolve: buildResolve(options),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
-  }
+  };
 }
