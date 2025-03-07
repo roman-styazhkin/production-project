@@ -1,7 +1,5 @@
-export const Loader = () => {
-    return (
-        <div className="page-wrapper">
-            Loading...
-        </div>
-    );
-};
+export const Loader = () => (
+  <div className="page-wrapper">
+    Loading...
+  </div>
+);
